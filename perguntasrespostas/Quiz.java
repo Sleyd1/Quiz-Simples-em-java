@@ -4,8 +4,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Quiz {
-    private ArrayList<String> perguntas = new ArrayList<>();
-    private ArrayList<String> respostaDoUsuario = new ArrayList<>();
+    private final ArrayList<String> perguntas = new ArrayList<>();
+    private final ArrayList<String> respostaDoUsuario = new ArrayList<>();
 
     {
         perguntas.add("Qual é o valor de x na equação 2x + 3 = 11?");
@@ -42,7 +42,7 @@ public class Quiz {
             System.out.print("Responta Aqui: ");
             tentativas = entrada.nextLine();
 
-            if (tentativas.equalsIgnoreCase(Alternativas.resposta[cont])){
+            if (tentativas.equalsIgnoreCase(Alternativas.getResposta(cont))){
                 acertos+=1;
             }
 
@@ -67,7 +67,7 @@ public class Quiz {
 
     public void pergunte(){
         Scanner entrada = new Scanner(System.in);
-        String perguntaAoUsuario = "";
+        String perguntaAoUsuario;
         System.out.println("Deseja ver suas resposta? S/N ");
         perguntaAoUsuario = entrada.nextLine();
 
@@ -77,10 +77,10 @@ public class Quiz {
             for (String c: respostaDoUsuario){
 
 
-                if (c.equalsIgnoreCase(Alternativas.resposta[cont])){
+                if (c.equalsIgnoreCase(Alternativas.getResposta(cont))){
                     System.out.println(c + " Você Acertou!");
                 } else {
-                    System.out.println(c +" você Errou Respota certa: "+ Alternativas.resposta[cont]);
+                    System.out.println(c +" você Errou Respota certa: "+ Alternativas.getResposta(cont));
                 }
 
                 cont +=1;
