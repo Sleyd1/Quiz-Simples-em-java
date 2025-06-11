@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Quiz {
-    private String[] respostas;
     private ArrayList<String> perguntas = new ArrayList<>();
     private ArrayList<String> respostaDoUsuario = new ArrayList<>();
 
@@ -20,10 +19,7 @@ public class Quiz {
         perguntas.add("O valor de log₁₀(1000) é:");
         perguntas.add("Qual o número que satisfaz a inequação: 3x - 2 > 4?");
 
-        respostas = new String[] {
-                "4", "40 cm²", "1/2", "R$ 150", "13",
-                "Uma parábola com concavidade para cima", "7", "10", "3", "x > 2"
-        };
+
     }
 
     public Quiz() {
